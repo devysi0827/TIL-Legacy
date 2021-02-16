@@ -1,0 +1,36 @@
+------내 풀이----------------
+1. 리스트를 세로축으로 변환하자 --> 복사한 애들이 동시에 값이 변해
+
+--
+1. 0이 아닌 값과 좌표를 찾는 함수  
+2. 0이 아닌 값을 basket에 추가하기  --> 3-1을 추가 전값과 후값이 같다면 추가하지 않는다
+3. 추가한 값을0으로 만드는 함수
+
+--
+1. basket이 같으면 제거 --> 구현이 불가능했다.$$$$$$$$$$$$$$$$$$$$$$$
+2. 반복 
+
+-----programmers 
+1. 스택을 공부해야해 -> 3을 더 편하게
+2. 굳이 리스트를 변경할 필요없이 바로 쓸 수 있었다. --> 1생략가능
+3. 함수를 안쓰고 직접접근도 가능했어. -->2 생략 가능
+
+<-- 모범답안
+def solution(board, moves):
+    stacklist = []
+    answer = 0
+
+    for i in moves:
+        for j in range(len(board)):
+            if board[j][i-1] != 0:
+                stacklist.append(board[j][i-1])
+                board[j][i-1] = 0
+
+                if len(stacklist) > 1:
+                    if stacklist[-1] == stacklist[-2]:
+                        stacklist.pop(-1)
+                        stacklist.pop(-1)
+                        answer += 2     
+                break
+
+    return answer

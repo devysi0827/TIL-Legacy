@@ -1,53 +1,43 @@
-#  입력
 import sys
-sys.stdin = open("2.txt","r")
-case_num = int(input())
+sys.stdin = open("input.txt","r")
+
+#함수
 
 
+
+#본문<-------------------->
+case_num = int(input())  #최초반복횟수
 for case in range(case_num):
-    # 기본 설정
-    num = int(input())
-    list_num = []
-    for repeat in range(num):
-        new_list = []# 달팽이가 들어갈 리스트
-        for repeat2 in range(num):
-            new_list.append(0)
-        list_num.append(new_list)
+    # 기본 인풋을 이용한 박스형성
+    n = int(input())
+    box= [[0]*n for _ in range(n)]
+    row = 0
+    col = -1
+    dr = [0,1,0,-1]
+    dc = [1,0,-1,0]
+    check = 0
 
-    numbers = []
-    for i in range(num**2):
-        numbers.append(i+1)  # 1~16까지 리스트
+    for i in range(1,n**2+1):
+        temp_row = row + dr[check]
+        temp_col = col + dc[check]
 
-   # 시작
-    count = 0
-    j = 0
-    check_num = 0
-    for index in range(2*num -1):
-         i = index //2
-         #  1234
-         if index%2 ==0:
-             if index % 4 ==0:
-                 for j in range(i,num):
-                    list_num[i][j] = numbers[check_num]
-                    check_num +=1
+        if temp_row >= n or temp_row<0 or temp_col>=n or temp_col<0 or box[temp_row][temp_col] != 0:
+            check = (check + 1) % 4
 
-             else:
-                 for j in range(i,num):
-                    list_num[4-i-1][num-j-1] = numbers[check_num]
-                    check_num +=1
-
-         # 567
-         if index%2 ==1:
-             if index % 4 ==1:
-                 for j in range(i+1, num):
-                     list_num[j][num-i-1] = numbers[check_num]
-                     check_num += 1
-
-             if index % 4 == 3:
-                 for j in range(num, i+2, -1):
-                     list_num[i-1][num-j+1] = numbers[check_num]
-                     check_num += 1
+        row = row + dr[check]
+        col = col + dc[check]
+        box[row][col] = i
+    print('#{} '.format(case + 1))
+    for i in range(n):
+        print(*box[i])
 
 
 
-    print(list_num)
+
+
+
+
+
+
+
+    # print("#{} {}".format(case+1,answer))

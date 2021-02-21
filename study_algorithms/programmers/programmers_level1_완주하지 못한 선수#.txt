@@ -1,0 +1,20 @@
+------내 풀이----------------
+#1:
+완료자명단을 하나씩 돌면서 참가자명단의 수를 지운다.
+남은 참가자를 반환한다 -> 시간초과
+
+#2:
+정렬한다.
+정렬한 원소들끼리 맞지 않다면, 그때 값을 반환한다.
+
+-----programmers 
+1. 1이 더 정확하지만, 문제 조건이 한 명이여서 2가 가능하고 더 빠르다.
+2. 아래는 객체를 이용한 풀이라는 데 간단하니 익혀두면 좋을 것 같다
+
+<-- 모범답안 # 이해못함
+import collections
+
+
+def solution(participant, completion):
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    return list(answer.keys())[0]

@@ -1,9 +1,10 @@
 import sys
 sys.stdin = open("input (6).txt","r")
 
-#함수
+#본문
 case_num = int(input())
 for case in range(case_num):
+    #기본인풋
     n = int(input())
     box = []
     for i in range(n):
@@ -11,9 +12,9 @@ for case in range(case_num):
         box.append(temp)
 
     middle_num = n//2
-    minus = -1
     ans= 0
 
+    minus = -1
     for i in range(middle_num,-1,-1):
         minus += 1
         for j in range(minus,n-minus):

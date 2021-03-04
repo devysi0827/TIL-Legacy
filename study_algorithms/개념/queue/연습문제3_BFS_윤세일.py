@@ -29,6 +29,7 @@ root = []
 visited = [False]*(n+1)  #방문하면 해당위치를 True
 enque(s)  #s값, 최초값 삽입
 
+
 # 풀이
 while len(queue) > 0:
     check = deque()  #스택의 맨위를 살핀다
@@ -38,9 +39,9 @@ while len(queue) > 0:
         s = check
         visited[s] = True  #False면 방문한다
         root.append(s)
+
         for i in range(n+1):  #행의 모든 원소에 대해
             if visited[i] == False and box[s][i] == 1:  #방문한적이 없고, 그 지점값이 1이라면
                 enque(i)  #스택에 추가한다!
 
-print(root)
 

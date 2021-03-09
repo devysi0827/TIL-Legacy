@@ -4,8 +4,8 @@
 {% endblock title %}
 {% block content %}
   <h1>ping</h1>
-  
-  <form action="{% url 'ping' %}" method = "GET">
+  {% comment %} /경로 별명  {% endcomment %}
+  <form action="ping.html" method = "GET">
     <label for="kor-name">한글이름</label>
     <input type="text" name = "kor-name" id ="kor-name">
     <label for="">영어이름</label>

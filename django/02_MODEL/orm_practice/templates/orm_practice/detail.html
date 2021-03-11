@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Detail page{% endblock title %}
+
+{% block body %}
+  <h1>This is Detail page</h1>
+  <h2>{{ student.id }} => {{ student.name }}</h2>
+  <h3>{{ student.age }} | {{ student.major }}</h3>
+  <p>{{ student.intro }}</p>
+  <a href="{% url 'index' %}" class="btn btn-primary">Index</a>
+  <a href="{% url 'edit' student.id %}" class="btn secondary-primary">edit</a>
+  <a href="{% url 'delete' student.id %}" class="btn secondary-primary" 
+  onclick ="return confirm('삭제')">delete</a>
+{% endblock body %}

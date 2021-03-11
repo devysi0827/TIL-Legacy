@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}detail page{% endblock title %}
+
+{% block body %}
+<h1>NEW</h1>
+ <form action="{% url 'create' %}" method="GET">
+  <div>
+    TITLE: <input type="text" name="title">
+  </div>
+
+  CONTENT: <textarea name="intro" cols="30" rows="10"></textarea>
+
+  <div>
+    <input type="submit" class="btn btn-primary">
+  </div>
+  <a href=" {% url 'index' %} ">back</a>
+</form>
+
+
+{% endblock body %}

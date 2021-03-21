@@ -174,13 +174,8 @@
   ![image-20210310025321930](00_django_intro.assets/image-20210310025321930.png)
 
   - 이런식으로 표현하면 workshop0308의 lotto.html임을 확실히 구별가능하다.
-
-
-
-- name spacing (2)
-  - appname을 이용한 이차구분이 가능하다(추후 다시설명예정)
-
-
+  
+  
 
 - 변수<> 사용법
 

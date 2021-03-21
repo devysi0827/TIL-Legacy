@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>INDEX</h1>
+  <a href=" {% url 'new' %} " class= "btn btn-primary">new</a>
+  <p></p>
+  {% for article in articles %}
+    <div>
+   
+    
+    <h2>
+    {{article.title}}
+    </h2>
+    <h3>
+    {{article.content}}
+    </h3>
+    
+     <a class='btn btn-primary' href= {% url 'detail' article.pk %} > DETAIL</a> 
+    </div>
+   
+  {% endfor %}
+  
+{% endblock content %}

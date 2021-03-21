@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>new</h1>
+    <form action=" {% url 'create' %}" method = "POST"> 
+    {% comment %} create로 이 정보를 post방식으로 담아서 보내겠다 {% endcomment %}
+    {% csrf_token %}
+    {% comment %} name = key값 {% endcomment %}
+    
+    <div>
+      title: <input type="text" name= 'title'>
+    </div>
+
+      content :<textarea name="content" cols="30" rows="10"></textarea>
+    
+
+    <div>
+      <input type="submit" class= "btn btn-primary">
+    </div>
+    </form>
+    <div>
+      <a href=" {% url 'index' %}">back</a>
+    </div>
+{% endblock content %}

@@ -1,3 +1,19 @@
-#Today I Learned
+# Today I Learned
 
-##python
+
+
+## python
+
+| Date | Workshop | Homework |
+| ---- | -------- | -------- |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+|      |          |          |
+

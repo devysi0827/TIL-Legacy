@@ -38,7 +38,7 @@
 
     ```js
     const mongoose = require('mongoose')
-    mongoose.connect('mongodb+srv://devysi:tkatjd2508!!@boiler-plate.ezrrw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+    mongoose.connect('mongodb+srv://--:--@boiler-plate.ezrrw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
         useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
     }).then(()=> console.log('connect'))
     .catch(err => console.log(err))

@@ -265,9 +265,33 @@ TIP: x 디버깅 X하나를 쳐서 오류를 일부러 내고, 요청정보가 �
   - request.GET.get()= 딕셔너리의 키가 없어도 논을 리턴
   - 상황에 맞게 사용
 
+# url open, xmltodict
 
+```python
+# sell use
+from urllib.request import urlopen
+import random, requests, json
+import xmltodict
 
+#main_page 1차 완성
+@api_view(['GET'])
+def artifact_recommend(request):
+    #수정: 숫자범위를 sql 데이터 마지막으로 바꿔야함
+    # 랜덤 추천 유물 선정
+    random_num = random.randrange(1,100)
+    recommended_artifact = Artifact.objects.filter(id=random_num)
+    recommended_artifact_num = recommended_artifact[0].identification_number
+    
+    # url에서 유물 데이터 수신 후 json 데이터 전송
+    artifact_url = f"http://www.emuseum.go.kr/openapi/relic/detail?serviceKey={service_key}&id={recommended_artifact_num}"
+    url_open = urlopen(artifact_url)
+    response_xml = url_open.read().decode('utf-8')
+    response_dict = xmltodict.parse(response_xml)
+    response_json = json.dumps(response_dict)
 
+    #수정 vue에 필요한 응답을 만들기
+    return Response(response_json)
+```
 
-
-
+- url open을 통하여도 requests를 대신하여 url 응답결과를 볼 수 있다.
+- xmltodict를 통해서 만약 json파일로 변경할 수 없다면 xml을 우선 dict로 변환하여 사용하자

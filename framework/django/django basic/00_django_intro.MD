@@ -295,3 +295,12 @@ def artifact_recommend(request):
 
 - url open을 통하여도 requests를 대신하여 url 응답결과를 볼 수 있다.
 - xmltodict를 통해서 만약 json파일로 변경할 수 없다면 xml을 우선 dict로 변환하여 사용하자
+
+
+
+# BeautifulSoup
+
+- byte로 바꾸는 import
+
+  
+

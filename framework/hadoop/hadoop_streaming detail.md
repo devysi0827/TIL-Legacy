@@ -103,10 +103,11 @@ if current_word == word:
 
 ```java
 hadoop jar /hadoop-streaming-3.2.2.jar \
--input input \
--output output \
--mapper 'python3 mapper.py' \
--reducer 'python3 reducer.py'
+-input input \ ==> 2000개 유물데이터(미리 넣어놓는다?), 하나의 타겟데이터()==<>
+-output output \ ===> 타겟 유물 아이디 4-5개
+-mapper 'python3 mapper.py' \ ====> 타겟데이터 간의 거리 비교 14차원!
+    mapper 내 상위 5개를 선정 (5/20)
+-reducer 'python3 reducer.py' =====> 그 중 상위 5개 선정 (5/5*n)
 ```
 
 
@@ -118,10 +119,10 @@ hadoop jar ../../../usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2
 ```
 
 	1. hadoop jar ..... : 하둡을 이용하여 jar파일을 실행시키겠다는 뜻, 이 코드에서는hadoop-streaming-3.2.2.jar를 실행시켰다 
- 	2. -input: p_wordcount : `p_wordcount`를 input파일로 사용한다
- 	3. -output `p_wordcount_out`로 output파일을 저장한다. 이 때 이름은 자유롭게 지정가능하며 만약 같은 파일이 있다면 에러가 발생한다
- 	4. -mapper 'python3 ...' : mapper로 다음 파일을 사용한다. 여기서 ''가 없거나 ''안에 python3를 명시해주지 않으면 default가 java기 때문에 에러가 발생한다.  
- 	5. -reudce 'python3 ...' : reducer로 다음 파일을 사용한다. 여기서 ''가 없거나 ''안에 python3를 명시해주지 않으면 default가 java기 때문에 에러가 발생한다.  
+	2. -input: p_wordcount : `p_wordcount`를 input파일로 사용한다
+	3. -output `p_wordcount_out`로 output파일을 저장한다. 이 때 이름은 자유롭게 지정가능하며 만약 같은 파일이 있다면 에러가 발생한다
+	4. -mapper 'python3 ...' : mapper로 다음 파일을 사용한다. 여기서 ''가 없거나 ''안에 python3를 명시해주지 않으면 default가 java기 때문에 에러가 발생한다.  
+	5. -reudce 'python3 ...' : reducer로 다음 파일을 사용한다. 여기서 ''가 없거나 ''안에 python3를 명시해주지 않으면 default가 java기 때문에 에러가 발생한다.  
 
 
 

@@ -302,5 +302,7 @@ def artifact_recommend(request):
 
 - byte로 바꾸는 import
 
+- findAll : 해당 데이터를 찾아서 객체로 뽑아내는 함수
+
   
 

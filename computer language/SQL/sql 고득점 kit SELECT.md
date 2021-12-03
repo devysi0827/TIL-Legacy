@@ -1,0 +1,56 @@
+# sql 고득점 kit
+
+### 1. 모든 레코드 조회하기
+
+```mysql
+SELECT * FROM ANIMAL_INS ORDER BY ANIMAL_ID
+```
+
+
+
+2. 역순 정렬하기
+
+```mysql
+SELECT NAME,DATETIME FROM ANIMAL_INS ORDER BY ANIMAL_ID DESC;
+```
+
+
+
+3. 특정 상태 찾기
+
+```
+SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION='Sick';
+```
+
+
+
+4. != 사용하기
+
+```
+SELECT ANIMAL_ID ,NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION != 'Aged' or 'Sick';
+```
+
+
+
+5. 특정 컬럼을 기준으로 정렬하기
+
+```
+SELECT ANIMAL_ID ,NAME FROM ANIMAL_INS ORDER BY ANIMAL_ID;
+```
+
+
+
+6. 여러 기준으로 정렬하기
+
+```
+SELECT ANIMAL_ID ,NAME, DATETIME FROM ANIMAL_INS ORDER BY NAME, DATETIME DESC;
+```
+
+
+
+7. 상위 N개 레코드
+
+```
+SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME LIMIT 1;
+```
+
